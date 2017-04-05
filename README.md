@@ -2,17 +2,6 @@
 
 Generate multiple configurable sine waves using a `canvas` element
 
-[![Build Status](http://img.shields.io/travis/isuttell/sine-waves/master.svg?style=flat)](https://travis-ci.org/isuttell/sine-waves)
-[![Coverage Status](https://img.shields.io/coveralls/isuttell/sine-waves/master.svg?style=flat)](https://coveralls.io/r/isuttell/sine-waves)
-[![Codacy Badge](https://img.shields.io/codacy/a52fd69032474c0ca88dc06ab69a9839.svg?style=flat)](https://www.codacy.com/public/isuttell/sine-waves)
-[![Dev Dependencies](http://img.shields.io/david/dev/isuttell/sine-waves.svg?style=flat)](https://david-dm.org/isuttell/sine-waves#info=devDependencies)
-[![Release](https://img.shields.io/bower/v/sine-waves.svg?style=flat)](https://github.com/isuttell/sine-waves/tarball/master)
-
-## Bower
-
-```shell
-bower install sine-waves --save
-```
 
 ## Basic Usage
 ```js
@@ -168,6 +157,7 @@ waves.update();
 SineWaves is open-sourced software licensed under the MIT license
 
 ## Release History
+- v0.4.0 - Refactor with webpack, some functionalities have been stripped out
 - v0.3.0 - Refactor, added custom waves, and bug fixes
 - v0.2.0-alpha - Added rotate, ease, wavesWidth and wave types options
 - v0.1.0-alpha - Initial Release

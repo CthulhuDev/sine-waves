@@ -43,8 +43,9 @@
     <body>
         <h1 id="title">SineWaves</h1>
         <canvas id="waves"></canvas>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script src="../sine-waves.js"></script>
+        <script src="../dist/sine-waves.bundle.js"></script>
         <script>
         $(function(){
             var waves = new SineWaves({
@@ -62,39 +63,17 @@
 
               wavesWidth: '95%',
 
-              ease: 'SineInOut',
-
+              ease: 'Linear',
               waves: [
                 {
                   timeModifier: 1,
                   lineWidth: 3,
-                  amplitude: 150,
+                  amplitude: 200,
                   wavelength: 200,
+                  rotate: 15,
                   segmentLength: 20,
-            //       strokeStyle: 'rgba(255, 255, 255, 0.5)'
-                },
-                {
-                  timeModifier: 1,
-                  lineWidth: 2,
-                  amplitude: 150,
-                  wavelength: 100,
-            //       strokeStyle: 'rgba(255, 255, 255, 0.3)'
-                },
-                {
-                  timeModifier: 1,
-                  lineWidth: 1,
-                  amplitude: -150,
-                  wavelength: 50,
-                  segmentLength: 10,
-            //       strokeStyle: 'rgba(255, 255, 255, 0.2)'
-                },
-                {
-                  timeModifier: 1,
-                  lineWidth: 0.5,
-                  amplitude: -100,
-                  wavelength: 100,
-                  segmentLength: 10,
-            //       strokeStyle: 'rgba(255, 255, 255, 0.1)'
+                  rotation: 15,
+                 strokeStyle: 'rgba(255, 255, 255, 1)'
                 }
               ],
 
@@ -120,6 +99,18 @@
                 gradient = void 0;
               }
             });
+
+            setTimeout(() => {
+              waves.setAmplitude(0, 300)
+              console.log('kek')
+            }, 4000)
+
+
+
+          setTimeout(() => {
+            waves.setAmplitude(0, 200)
+            console.log('kek')
+          }, 12000)
         });
         </script>
     </body>

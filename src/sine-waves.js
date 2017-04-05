@@ -105,6 +105,15 @@ export default class SineWaves {
    *
    * @param {Number} waveIndex of the wave
    */
+  getWavelength (waveIndex) {
+    return this.waves[waveIndex].amplitude
+  }
+
+  /**
+   * Getter method for wave amplitude
+   *
+   * @param {Number} waveIndex of the wave
+   */
   getAmplitude (waveIndex) {
     return this.waves[waveIndex].amplitude
   }

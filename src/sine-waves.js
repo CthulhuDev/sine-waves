@@ -94,10 +94,27 @@ export default class SineWaves {
    *
    * @param {Number} waveIndex of the wave
    * @param {Number} amplitude
-   * @param {Number} time
    */
   setAmplitude (waveIndex, amplitude) {
     this.waves[waveIndex].amplitude = amplitude
+  }
+
+  /**
+   * Set timescale
+   * @param waveIndex
+   * @param timeModifier
+   */
+  setTimeModifier (waveIndex, timeModifier) {
+    this.waves[waveIndex].timeModifier = timeModifier
+  }
+
+  /**
+   * Getter method for timeModifier
+   *
+   * @param {Number} waveIndex of the wave
+   */
+  getTimeModifier (waveIndex) {
+    return this.waves[waveIndex].timeModifier
   }
 
   /**

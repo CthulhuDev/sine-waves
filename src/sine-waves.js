@@ -74,8 +74,33 @@ export default class SineWaves {
     // Assign wave functions
     this.setupWaveFns()
 
+    //
+    this.setupOscillation()
+
     // Start the magic
     this.loop()
+  }
+
+
+  killOscillation () {
+    for (let wave of this.waves) {
+      wave.oscillationTween.kill()
+    }
+  }
+
+  setupOscillation () {
+    for (let wave of this.waves) {
+      console.log(wave.oscillationTime)
+      wave.oscillationTween = TweenLite.to(wave, wave.oscillationTime, {
+        oscillatedAmplitude: '+=' + wave.oscillation,
+        onComplete: () => {
+          wave.oscillationTween.reverse()
+        },
+        onReverseComplete: () => {
+          wave.oscillationTween.play()
+        }
+      })
+    }
   }
 
   /**
@@ -97,6 +122,11 @@ export default class SineWaves {
    */
   setAmplitude (waveIndex, amplitude) {
     this.waves[waveIndex].amplitude = amplitude
+    this.waves[waveIndex].oscillatedAmplitude = amplitude
+
+    // killing tweens
+    this.killOscillation()
+    this.setupOscillation()
   }
 
   /**
@@ -210,6 +240,9 @@ export default class SineWaves {
       wavelength: 50,
       segmentLength: 10,
       lineWidth: 1,
+      oscillation: 0,
+      oscillationTime: 2,
+      oscillationTween: undefined,
       strokeStyle: 'rgba(255, 255, 255, 0.2)',
       type: 'Sine'
     }
@@ -356,6 +389,9 @@ export default class SineWaves {
 
     // Left and Right Sine Easing
     let amplitude = this.easeFn.call(this, position / this.waveWidth, options.amplitude)
+    if (options.oscillation !== 0) {
+      amplitude = this.easeFn.call(this, position / this.waveWidth, options.oscillatedAmplitude)
+    }
 
     x = position + this.waveLeft
     y = amplitude * y + this.yAxis

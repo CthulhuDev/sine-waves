@@ -1,6 +1,6 @@
 {
   "name": "sine-waves",
-  "version": "v0.4.6",
+  "version": "v0.4.7",
   "main": "./dist/sine-waves.bundle.js",
   "description": "Generate multiple configurable sine waves",
   "homepage": "https://github.com/isuttell/sine-waves",

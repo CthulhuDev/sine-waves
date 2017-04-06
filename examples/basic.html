@@ -68,10 +68,11 @@
                 {
                   timeModifier: 1,
                   lineWidth: 3,
-                  amplitude: 200,
+                  amplitude: 100,
                   wavelength: 200,
                   rotate: 15,
                   segmentLength: 20,
+                  oscillation: 100,
                   rotation: 15,
                  strokeStyle: 'rgba(255, 255, 255, 1)'
                 }
@@ -103,14 +104,7 @@
             setTimeout(() => {
               waves.setAmplitude(0, 300)
               console.log('kek')
-            }, 4000)
-
-
-
-          setTimeout(() => {
-            waves.setAmplitude(0, 200)
-            console.log('kek')
-          }, 12000)
+            }, 1000)
         });
         </script>
     </body>

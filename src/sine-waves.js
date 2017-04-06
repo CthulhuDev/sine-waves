@@ -136,6 +136,27 @@ export default class SineWaves {
   }
 
   /**
+   * Getter method for the application speed
+   *
+   */
+  getSpeed () {
+    return this.options.speed
+  }
+
+  /**
+   * Set a new speed
+   *
+   * @param {Number} new speed to be set
+   */
+  setSpeed (speed) {
+    let currentTime = this.time
+    let currentSpeed = this.options.speed
+
+    this.time = (speed * currentTime) / currentSpeed
+    this.options.speed = speed
+  }
+
+  /**
    * Default Options
    *
    * @type {Object}

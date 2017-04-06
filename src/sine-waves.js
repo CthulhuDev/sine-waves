@@ -146,13 +146,13 @@ export default class SineWaves {
   /**
    * Set a new speed
    *
-   * @param {Number} new speed to be set
+   * @param {Number} speed - new speed to be set
    */
   setSpeed (speed) {
     let currentTime = this.time
     let currentSpeed = this.options.speed
 
-    this.time = (speed * currentTime) / currentSpeed
+    this.time = (currentSpeed * currentTime) / speed
     this.options.speed = speed
   }
 

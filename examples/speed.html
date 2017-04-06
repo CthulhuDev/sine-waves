@@ -51,7 +51,7 @@
             var waves = new SineWaves({
               el: document.getElementById('waves'),
 
-              speed: 8,
+              speed: 2,
 
               width: function() {
                 return $(window).width();
@@ -101,14 +101,13 @@
             });
 
             var obj = { speed: waves.getSpeed() }
-            var tweencazz = TweenMax.to( obj, 150, {
-              speed: 250,
+            var tweencazz = TweenMax.to(obj, 10, {
+              speed: 20,
+              repeat: -1,
+              yoyo: true,
               onUpdate: function () {
                 console.log(waves.getSpeed())
                 waves.setSpeed(obj.speed)
-              },
-              onComplete: function () {
-                tweencazz.play()
               }
             })
         });

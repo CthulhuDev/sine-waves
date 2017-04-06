@@ -90,7 +90,6 @@ export default class SineWaves {
 
   setupOscillation () {
     for (let wave of this.waves) {
-      console.log(wave.oscillationTime)
       wave.oscillationTween = TweenLite.to(wave, wave.oscillationTime, {
         oscillatedAmplitude: '+=' + wave.oscillation,
         onComplete: () => {

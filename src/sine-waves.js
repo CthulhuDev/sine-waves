@@ -388,7 +388,7 @@ export default class SineWaves {
 
     // Left and Right Sine Easing
     let amplitude = this.easeFn.call(this, position / this.waveWidth, options.amplitude)
-    if (options.oscillation !== 0) {
+    if (options.oscillation !== 0 && options.amplitude !== 0) {
       amplitude = this.easeFn.call(this, position / this.waveWidth, options.oscillatedAmplitude)
     }
 

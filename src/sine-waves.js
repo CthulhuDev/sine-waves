@@ -317,6 +317,7 @@ export default class SineWaves {
 
     // Vertical center
     this.yAxis = this.height / 2
+    console.log(this.yAxis)
   }
 
   /**

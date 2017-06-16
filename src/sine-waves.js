@@ -51,7 +51,13 @@ export default class SineWaves {
     }
 
     // DPI
-    this.dpr = window.devicePixelRatio || 1
+    this.devicePixelRatio = window.devicePixelRatio || 1
+    this.backingStoreRatio = context.webkitBackingStorePixelRatio ||
+      context.mozBackingStorePixelRatio ||
+      context.msBackingStorePixelRatio ||
+      context.oBackingStorePixelRatio ||
+      context.backingStorePixelRatio || 1
+    this.dpr = this.devicePixelRatio / this.backingStoreRatio
 
     // Setup canvas width/heights
     this.updateDimensions()
@@ -317,7 +323,6 @@ export default class SineWaves {
 
     // Vertical center
     this.yAxis = this.height / 2
-    console.log(this.yAxis)
   }
 
   /**
